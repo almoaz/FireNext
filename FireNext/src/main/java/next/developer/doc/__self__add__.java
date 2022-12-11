@@ -1,0 +1,233 @@
+package next.developer.doc;
+
+import static next.developer.doc.__init__.*;
+
+import android.content.Context;
+
+import java.io.File;
+
+public class __self__add__ {
+    public static String __self__add__(String self, Context context) {
+        String value = "";
+        String databaseName = "";
+
+        for (int x = 0; x <= self.length(); x++) {
+            if ('>' != self.charAt(x)) {
+                value = value + self.charAt(x);
+            }
+            if ('>' == self.charAt(x)) {
+                if (databaseName.equals("")) {
+                    File file = new File(context.getFilesDir(), value + ".ndb");
+                    if (file.exists()) {
+                        databaseName = value;
+                        value = "";
+                    } else {
+                        __create__database__.__create__database__(value, context);
+                        databaseName = value;
+                        value = "";
+                    }
+
+
+                } else {
+                    String childData = __file__read__.__file__read__(databaseName, context);
+                    if (childData.equals("")) {
+                        __database__writer__.__database__writer__(databaseName, start__tag + value + end__tag, context);
+                        __create__database__.__create__database__(value, context);
+
+                        databaseName = value;
+                    } else {
+                        String readChild = "";
+                        String updateNDB = "";
+
+                        for (int x1 = 0; x1 <= childData.length(); x1++) {
+                            if (childData.charAt(x1) != end__tag) {
+                                updateNDB = updateNDB + childData.charAt(x1);
+                            }
+                            if (childData.charAt(x1) != start__tag && childData.charAt(x1) != child__end__tag && childData.charAt(x1) != end__tag) {
+                                readChild = readChild + childData.charAt(x1);
+                            }
+                            if (childData.charAt(x1) == child__end__tag) {
+                                if (readChild.equals(value)) {
+                                    databaseName = value;
+                                    break;
+                                }
+                                readChild = "";
+                            }
+                            if (childData.charAt(x1) == end__tag && x1 == childData.length() - 1) {
+                                if (readChild.equals(value)) {
+                                    databaseName = value;
+                                } else {
+                                    updateNDB = updateNDB + child__end__tag + value + childData.charAt(x1);
+                                    __database__writer__.__database__writer__(databaseName, updateNDB, context);
+                                    __database__writer__.__database__writer__(value, "", context);
+                                    databaseName = value;
+                                }
+                                break;
+
+
+                            }
+                            if (x1 == childData.length() - 1) {
+                                break;
+                            }
+
+                        }
+                    }
+                    value = "";
+                }
+            }
+            if (x == self.length() - 1) {
+                String childData = __file__read__.__file__read__(databaseName, context);
+
+                String value1 = "";
+                if (childData.equals("")) {
+
+                    for (int x1 = 0; x1 <= value.length(); x1++) {
+                        if (value.charAt(x1) != devided__tag) {
+                            value1 = value1 + value.charAt(x1);
+                        }
+                        if (value.charAt(x1) == devided__tag) {
+
+                            value1 = value1 + child__end__tag;
+
+                        }
+                        if (x1 == value.length() - 1) {
+                            break;
+                        }
+                    }
+                    __database__writer__.__database__writer__(databaseName, start__tag + value1 + end__tag, context);
+                    break;
+                } else {
+                    String name = "";
+                    for (int x1 = 0; x1 <= value.length(); x1++) {
+                        if (value.charAt(x1) != devided__tag) {
+                            value1 = value1 + value.charAt(x1);
+                        }
+                        if (value.charAt(x1) == value__child__tag) {
+                            name = value1;
+                            value1 = "";
+                        }
+                        if (value.charAt(x1) == devided__tag) {
+                            String readChild = "";
+                            String updateNDB = "";
+                            String childMatch = "false";
+
+
+                            for (int x2 = 0; x2 <= childData.length(); x2++) {
+                                if (childData.charAt(x2) == start__tag) {
+                                    updateNDB = updateNDB + childData.charAt(x2);
+                                }
+                                if (childData.charAt(x2) != start__tag && childData.charAt(x2) != child__end__tag && childData.charAt(x2) != end__tag) {
+                                    readChild = readChild + childData.charAt(x2);
+                                }
+                                if (childData.charAt(x2) == child__end__tag) {
+                                    if (childMatch.equals("null")) {
+                                        updateNDB = updateNDB + name + value1;
+                                        childMatch = "true";
+                                    }
+                                    if (childMatch.equals("false")) {
+                                        updateNDB = updateNDB + readChild + child__end__tag;
+                                    }
+                                    readChild = "";
+
+                                }
+                                if (childData.charAt(x2) == value__child__tag) {
+                                    if (readChild.equals(name)) {
+                                        childMatch = "null";
+                                    }
+
+                                }
+                                if (childMatch.equals("true")) {
+                                    updateNDB = updateNDB + childData.charAt(x2);
+                                }
+                                if (childData.charAt(x2) == end__tag && x2 == childData.length() - 1) {
+                                    if (childMatch.equals("true")) {
+                                        __database__writer__.__database__writer__(databaseName, updateNDB, context);
+                                    }
+                                    if (childMatch.equals("null")) {
+                                        updateNDB = updateNDB + name + value1 + end__tag;
+                                        __database__writer__.__database__writer__(databaseName, updateNDB, context);
+                                    }
+                                    if (childMatch.equals("false")) {
+                                        childData = childData.substring(0, childData.length() - 1);
+                                        updateNDB = childData + child__end__tag + name + value1 + end__tag;
+                                        __database__writer__.__database__writer__(databaseName, updateNDB, context);
+                                    }
+                                    break;
+                                }
+                                if (x2 == childData.length() - 1) {
+                                    break;
+                                }
+
+
+                            }
+                            value1 = "";
+                            name = "";
+                        }
+                        if (x1 == value.length() - 1) {
+                            String readChild = "";
+                            String updateNDB = "";
+                            String childMatch = "false";
+
+                            childData = __file__read__.__file__read__(databaseName, context);
+
+                            for (int x2 = 0; x2 <= childData.length(); x2++) {
+                                if (childData.charAt(x2) == start__tag) {
+                                    updateNDB = updateNDB + childData.charAt(x2);
+                                }
+                                if (childData.charAt(x2) != start__tag && childData.charAt(x2) != child__end__tag && childData.charAt(x2) != end__tag) {
+                                    readChild = readChild + childData.charAt(x2);
+                                }
+                                if (childData.charAt(x2) == child__end__tag) {
+                                    if (childMatch.equals("null")) {
+                                        updateNDB = updateNDB + name + value1;
+                                        childMatch = "true";
+                                    }
+                                    if (childMatch.equals("false")) {
+                                        updateNDB = updateNDB + readChild + child__end__tag;
+                                    }
+                                    readChild = "";
+
+                                }
+                                if (childData.charAt(x2) == value__child__tag) {
+                                    if (readChild.equals(name)) {
+                                        childMatch = "null";
+                                    }
+
+                                }
+                                if (childMatch.equals("true")) {
+                                    updateNDB = updateNDB + childData.charAt(x2);
+                                }
+                                if (childData.charAt(x2) == end__tag && x2 == childData.length() - 1) {
+                                    if (childMatch.equals("true")) {
+                                        __database__writer__.__database__writer__(databaseName, updateNDB, context);
+                                    }
+                                    if (childMatch.equals("null")) {
+                                        updateNDB = updateNDB + name + value1 + end__tag;
+                                        __database__writer__.__database__writer__(databaseName, updateNDB, context);
+                                    }
+                                    if (childMatch.equals("false")) {
+                                        childData = childData.substring(0, childData.length() - 1);
+                                        updateNDB = childData + child__end__tag + name + value1 + end__tag;
+                                        __database__writer__.__database__writer__(databaseName, updateNDB, context);
+                                    }
+                                    break;
+                                }
+                                if (x2 == childData.length() - 1) {
+                                    break;
+                                }
+
+
+                            }
+                            break;
+                        }
+                    }
+
+                    return "true";
+
+                }
+
+            }
+        }
+        return "true";
+    }
+}
