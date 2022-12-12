@@ -23,16 +23,16 @@
 package next.developer.table;
 
 public class __init__ {
-    static char col__start__tag = '[';
-    static char col__end__tag = ']';
-    static char row__start__tag = '(';
-    static char row__end__tag = ')';
-    static char cel__end__tag = ',';
+    static char col__start__tag = 'Á';
+    static char col__end__tag = 'À';
+    static char row__start__tag = 'É';
+    static char row__end__tag = 'È';
+    static char cel__end__tag = 'Ê';
 
-    static char start__tag = '[';
-    static char end__tag = ']';
+    static char start__tag = 'Á';
+    static char end__tag = 'À';
     static String line__tag = "---";
-    static char child__end__tag = ',';
+    static char child__end__tag = 'Ê';
     static char devided__tag = '|';
     static char value__child__tag = ':';
 

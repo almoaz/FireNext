@@ -23,10 +23,10 @@
 package next.developer.doc;
 
 public class __init__ {
-    static char start__tag = '[';
-    static char end__tag = ']';
+    static char start__tag = 'Á';
+    static char end__tag = 'À';
     static String line__tag = "---";
-    static char child__end__tag = ',';
+    static char child__end__tag = 'Ê';
     static char devided__tag = '|';
     static char value__child__tag = ':';
 
