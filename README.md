@@ -128,5 +128,5 @@ USER
 ## Documentation
 
 - [NextTable](https://github.com/almoaz/FireNext/blob/master/README.md)
-- [NextDatabase](https://github.com/almoaz/FireNext/blob/master/README.md)
+- [NextDatabase](https://github.com/almoaz/FireNext/blob/master/NextDatabase.md)
 
