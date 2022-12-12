@@ -1,4 +1,4 @@
-# FireNext 
+# FireNext (Android)
 
 FireNext is an offline database library.
 
