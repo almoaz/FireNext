@@ -134,3 +134,30 @@ USER
 - [NextTable (Kotlin)](https://github.com/almoaz/FireNext/blob/master/NextTable(kt).md)
 - [NextDatabase (Kotlin)](https://github.com/almoaz/FireNext/blob/master/NextDatabase(kt).md)
 
+
+## Restiction
+
+Please do not use these characters in your documents.
+
+- " Á " this character means database start tag
+- " À " this character means database end tag
+- " É " this character means database start tag
+- " È " this character means database end tag
+- " Ê " this character means database end tag
+- " | " this character means add new data
+- " : " this character means valueChild
+
+"|" and ":" These character has its uses. You will find it in the documentation.
+
+
+## Having problems?
+
+Please inform me via email at 'almuaz1998@gmail.com'
+
+
+## Thanks
+
+- Many many thanks Android and Kotling developers
+- Special Thanks to Future Next Developers
+
+
