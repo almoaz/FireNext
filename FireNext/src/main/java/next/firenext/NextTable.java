@@ -31,7 +31,7 @@ public class NextTable {
     public static String table_to_doc(Context context, String Table_Name, String Column_Name)
     {
         /**
-         print(NextTable.delete_col("Table_Name", "id"))
+         System.out.println(NextTable.delete_col(getApplicationContext(), "Table_Name", "id"))
 
          Table_Name.nt   (Table)
 
@@ -70,7 +70,7 @@ public class NextTable {
 
         /**
 
-        System.out.println(NextTable.delete_col("ducument", "email"))
+        System.out.println(NextTable.delete_col(getApplicationContext(), "ducument", "email"))
 
         output: (now)
         id                  name
@@ -105,7 +105,7 @@ public class NextTable {
     {
         /**
 
-         System.out.println(NextTable.delete_row("ducument", "Mithila Nisa"))
+         System.out.println(NextTable.delete_row(getApplicationContext(), "ducument", "Mithila Nisa"))
 
         output: (now)
         id                  name                   email
@@ -138,7 +138,7 @@ public class NextTable {
     {
         /**
 
-         System.out.println(NextTable.update_row("ducument", "Mithila Nisa", "183071008|Mithila Mithi|abc@abc.com"))
+         System.out.println(NextTable.update_row(getApplicationContext(), "ducument", "Mithila Nisa", "183071008|Mithila Mithi|abc@abc.com"))
 
         output: (now)
         id                  name                   email
@@ -171,7 +171,7 @@ public class NextTable {
     {
         /**
 
-         System.out.println(NextTable.delete_data("ducument", "Mithila Nisa", "name"))
+         System.out.println(NextTable.delete_data(getApplicationContext(), "ducument", "Mithila Nisa", "name"))
 
         output: (now)
         id                  name                   email
@@ -204,7 +204,7 @@ public class NextTable {
     {
         /**
 
-         System.out.println(NextTable.delete_data("ducument", "Mithila Nisa", "email", "abc@abc.com"))
+         System.out.println(NextTable.delete_data(getApplicationContext(), "ducument", "Mithila Nisa", "email", "abc@abc.com"))
 
         output: (now)
         id                  name                   email
@@ -236,7 +236,7 @@ public class NextTable {
     public static List<Object> search_col_data(Context context, String Table_Name, String Column_Name)
     {
         /**
-         List<Object> value = NextTable.search_col_data(tableName,"id");
+         List<Object> value = NextTable.search_col_data(getApplicationContext(), tableName,"id");
          System.out.println(value);
 
          output: [183071007, 183071008, 183071009]
@@ -266,7 +266,7 @@ public class NextTable {
     {
         /**
 
-         System.out.println(NextTable.search_row_data("ducument", "183071007"))
+         System.out.println(NextTable.search_row_data(getApplicationContext(), "ducument", "183071007"))
 
         output:
         id                  name                   email
@@ -300,7 +300,7 @@ public class NextTable {
     {
         /**
 
-         System.out.println(NextTable.search_data("ducument", "183071008", "name"))
+         System.out.println(NextTable.search_data(getApplicationContext(), "ducument", "183071008", "name"))
 
         output: Mithila Nisa
 
@@ -327,7 +327,7 @@ public class NextTable {
     {
         /**
 
-         System.out.println(NextTable.read_table("ducument"))
+         System.out.println(NextTable.read_table(getApplicationContext(), "ducument"))
 
         output:
 
@@ -358,7 +358,7 @@ public class NextTable {
     {
         /**
 
-         System.out.println(NextTable.add_data("ducument", "183071009|Sharmin|xyz@xyz.com"))
+         System.out.println(NextTable.add_data(getApplicationContext(), "ducument", "183071009|Sharmin|xyz@xyz.com"))
 
         output: (now)
         id                  name                   email
@@ -389,7 +389,7 @@ public class NextTable {
     {
         /**
 
-         System.out.println(NextTable.delete_col_name("ducument", "email"))
+         System.out.println(NextTable.delete_col_name(getApplicationContext(), "ducument", "email"))
 
         output: (now)
         id                  name
@@ -422,7 +422,7 @@ public class NextTable {
     {
         /**
 
-         System.out.println(NextTable.update_col_data("ducument", "email", "EMAIL"))
+         System.out.println(NextTable.update_col_data(getApplicationContext(), "ducument", "email", "EMAIL"))
 
         output: (now)
         id                  name                   EMAIL
@@ -455,7 +455,7 @@ public class NextTable {
     {
         /**
 
-         System.out.println(NextTable.read_col_name("ducument", "email", "EMAIL"))
+         System.out.println(NextTable.read_col_name(getApplicationContext(), "ducument", "email", "EMAIL"))
 
         output:
         id     name      email
@@ -483,7 +483,7 @@ public class NextTable {
     {
         /**
 
-         System.out.println(NextTable.add_col_name("ducument", "email"))
+         System.out.println(NextTable.add_col_name(getApplicationContext(), "ducument", "email"))
 
         output: (now)
         id                  name                   email
@@ -516,7 +516,7 @@ public class NextTable {
     public static String delete_table(Context context, String Table_Name)
     {
         /**
-         System.out.println(delete_table("tableName"))
+         System.out.println(delete_table(getApplicationContext(), "tableName"))
 
         Already do you have a (tablename.nt) file then you delete this file any time.
 
@@ -530,7 +530,7 @@ public class NextTable {
     public static String create_table(Context context, String Table_Name)
     {
         /**
-         System.out.println(create_table("tableName"))
+         System.out.println(create_table(getApplicationContext(), "tableName"))
 
         When you create a table then you find a (tablename.nt) file .
 

@@ -35,7 +35,7 @@ public class NextDatabase {
     public static String add(Context context,String path)
     {
         /**
-           print(NextDatabase.add_data("USER>001>name:Mahfuz Salehin Moaz|age:26|nationality:Bangladesh"))
+           System.out.println(NextDatabase.add_data(getApplicationContext(), "USER>001>name:Mahfuz Salehin Moaz|age:26|nationality:Bangladesh"))
            output :
            USER
                |---001
@@ -61,7 +61,7 @@ public class NextDatabase {
 
 
 
-           print(NextDatabase.add_data("USER>001>name:"))
+           System.out.println(NextDatabase.add_data(getApplicationContext(), "USER>001>name:"))
            output :
            USER
                |---001
@@ -88,11 +88,11 @@ public class NextDatabase {
     public static String read(Context context,String path)
     {
         /**
-           print(NextDatabase.read("USER>001>name:"))
+           System.out.println(NextDatabase.read(getApplicationContext(), "USER>001>name:"))
            output : Mahfuz Salehin Moaz
 
 
-           print(NextDatabase.read("USER"))
+           System.out.println(NextDatabase.read(getApplicationContext(), "USER"))
            output:
            --------------------------------------------
            USER
@@ -110,7 +110,7 @@ public class NextDatabase {
                |     |---nationality:Bangladesh
            ----------------------------------------------
 
-           print(NextDatabase.read("USER>001"))
+           System.out.println(NextDatabase.read(getApplicationContext(), "USER>001"))
            output:
            ---------------------------------
            001
@@ -125,7 +125,7 @@ public class NextDatabase {
     public static String hasChild(Context context, String path)
     {
         /**
-           print(NextDatabase.hasChild("USER>001>name:"))
+           System.out.println(NextDatabase.hasChild(getApplicationContext(), "USER>001>name:"))
            output : true
 
            ---------------------------------------------
@@ -150,13 +150,13 @@ public class NextDatabase {
     public static ArrayList query(Context context,String path)
     {
         /**
-           child = NextDatabase.query("USER>name:")
+           child = NextDatabase.query(getApplicationContext(), "USER>name:")
            output : [001,002,003]
 
            for x in child:
 
-             if NextDatabase.hasChild("USER>"+x">name:") == "true":
-                print(NextDatabase.read_data("USER>"+x">name:"))
+             if NextDatabase.hasChild(getApplicationContext(), "USER>"+x">name:") == "true":
+                System.out.println(NextDatabase.read_data(getApplicationContext(), "USER>"+x">name:"))
 
            output : Mahfuz Salehin Moaz
                     Mithila Nisa
@@ -183,7 +183,7 @@ public class NextDatabase {
     public static String delete(Context context,String path)
     {
         /**
-           print(NextDatabase.read_data("USER>001>name:"))
+           System.out.println(NextDatabase.read_data(getApplicationContext(), "USER>001>name:"))
            output:
            ---------------------------------------------
            USER
@@ -201,7 +201,7 @@ public class NextDatabase {
            ----------------------------------------------
 
 
-           print(NextDatabase.read_data("USER>001))
+           System.out.println(NextDatabase.read_data(getApplicationContext(), "USER>001))
            output:
            ---------------------------------------------
            USER
