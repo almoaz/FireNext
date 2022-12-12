@@ -1,6 +1,6 @@
 # FireNext 
 
-FireNext is a offline database library.
+FireNext is an offline database library.
 
 
 ## Authors
