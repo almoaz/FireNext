@@ -127,6 +127,10 @@ USER
 
 ## Documentation
 
-- [NextTable (Java)](https://github.com/almoaz/FireNext/blob/master/README.md)
-- [NextDatabase (Java)](https://github.com/almoaz/FireNext/blob/master/NextTable.md)
+- [NextTable (Java)](https://github.com/almoaz/FireNext/blob/master/NextTable.md)
+- [NextDatabase (Java)](https://github.com/almoaz/FireNext/blob/master/NextDatabase.md)
+
+
+- [NextTable (Kotlin)](https://github.com/almoaz/FireNext/blob/master/NextTable(kt).md)
+- [NextDatabase (Kotlin)](https://github.com/almoaz/FireNext/blob/master/NextDatabase(kt).md)
 
