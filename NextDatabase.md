@@ -10,12 +10,12 @@ NextDatabase work with 5 method
 
 ## NextDatabase.add()
 ```bash
-NextDatabase.add("USER>18301>name:Mahfuz Salehin|id:18301|phone:016XXXXXXXX");
+NextDatabase.add(getApplicationContext(), "USER>18301>name:Mahfuz Salehin|id:18301|phone:016XXXXXXXX");
 ```
 
 ## NextDatabase.read()
 ```bash
-NextDatabase.read("USER>18301>name:");
+NextDatabase.read(getApplicationContext(), "USER>18301>name:");
 ```
 ```bash
 Output: Mahfuz Salehin 
@@ -24,7 +24,7 @@ Output: Mahfuz Salehin
 
 ## NextDatabase.read()
 ```bash
-NextDatabase.read("USER>18301");
+NextDatabase.read(getApplicationContext(), "USER>18301");
 ```
 ```bash
 Output:
@@ -38,7 +38,7 @@ Output:
 
 ## NextDatabase.read()
 ```bash
-NextDatabase.read("USER");
+NextDatabase.read(getApplicationContext(), "USER");
 ```
 ```bash
 Output:
@@ -53,7 +53,7 @@ USER
 
 ## NextDatabase.hasChild()
 ```bash
-NextDatabase.hasChild("USER>18301>name:");
+NextDatabase.hasChild(getApplicationContext(), "USER>18301>name:");
 ```
 ```bash
 Output: true 
@@ -62,7 +62,7 @@ Output: true
 
 ## NextDatabase.hasChild()
 ```bash
-NextDatabase.hasChild("USER>18301");
+NextDatabase.hasChild(getApplicationContext(), "USER>18301");
 ```
 ```bash
 Output: true 
@@ -71,7 +71,7 @@ Output: true
 
 ## NextDatabase.query()
 ```bash
-NextDatabase.query("USER>name:");
+NextDatabase.query(getApplicationContext(), "USER>name:");
 ```
 ```bash
 Output: [18301, 18302]
@@ -80,10 +80,10 @@ Output: [18301, 18302]
 
 ## NextDatabase.delete()
 ```bash
-NextDatabase.delete("USER>18301>name:");
+NextDatabase.delete(getApplicationContext(), "USER>18301>name:");
 ```
 
 ## NextDatabase.delete()
 ```bash
-NextDatabase.delete("USER>18301");
+NextDatabase.delete(getApplicationContext(), "USER>18301");
 ```
