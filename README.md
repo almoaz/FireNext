@@ -1,14 +1,11 @@
-
-## Authors
-
-- [Mahfuz Salehin Moaz](https://www.github.com/almoaz)
-
-
-
 # FireNext 
 
 FireNext is a offline database library.
 
+
+## Authors
+
+- [Mahfuz Salehin Moaz](https://www.github.com/almoaz)
 
 
 ## License
