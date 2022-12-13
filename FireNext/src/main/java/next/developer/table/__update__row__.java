@@ -55,7 +55,7 @@ public class __update__row__ {
                                     updateData = "true";
                                     String Data = "";
                                     for (int x2 = 0; x2 <= Update_Data.length(); x2++) {
-                                        if (Update_Data.charAt(x2) == '|') {
+                                        if (Update_Data.charAt(x2) == devided__tag) {
                                             Data = Data + cel__end__tag;
                                         } else {
                                             Data = Data + Update_Data.charAt(x2);
@@ -74,7 +74,7 @@ public class __update__row__ {
                                     updateData = "true";
                                     String Data = "";
                                     for (int x2 = 0; x2 <= Update_Data.length(); x2++) {
-                                        if (Update_Data.charAt(x2) == '|') {
+                                        if (Update_Data.charAt(x2) == devided__tag) {
                                             Data = Data + cel__end__tag;
                                         } else {
                                             Data = Data + Update_Data.charAt(x2);

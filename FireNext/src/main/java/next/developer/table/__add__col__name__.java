@@ -62,14 +62,14 @@ public class __add__col__name__ {
                     if (table.charAt(x) != col__end__tag && queryPermit.equals("false")) {
                         updateDB = updateDB + table.charAt(x);
                     }
-                    if (table.charAt(x) != col__start__tag && table.charAt(x) != cel__end__tag && table.charAt(x) != col__end__tag && queryPermit == "false") {
+                    if (table.charAt(x) != col__start__tag && table.charAt(x) != cel__end__tag && table.charAt(x) != col__end__tag && queryPermit.equals("false")) {
                         value = value + table.charAt(x);
                     } else if (table.charAt(x) == cel__end__tag && queryPermit.equals("false")) {
                         String value1 = "";
                         for (int x1 = 0; x1 <= Column_Name.length(); x1++) {
-                            if (Column_Name.charAt(x1) != '|') {
+                            if (Column_Name.charAt(x1) != devided__tag) {
                                 value1 = value1 + Column_Name.charAt(x1);
-                            } else if (Column_Name.charAt(x1) == '|') {
+                            } else if (Column_Name.charAt(x1) == devided__tag) {
                                 if (value.equals(value1)) {
                                     duplicateCondition = "true";
                                     if (duplicateColumnName.equals("")) {
@@ -100,9 +100,9 @@ public class __add__col__name__ {
                     } else if (table.charAt(x) == col__end__tag && queryPermit.equals("false")) {
                         String value1 = "";
                         for (int x1 = 0; x1 <= Column_Name.length(); x1++) {
-                            if (Column_Name.charAt(x1) != '|') {
+                            if (Column_Name.charAt(x1) != devided__tag) {
                                 value1 = value1 + Column_Name.charAt(x1);
-                            } else if (Column_Name.charAt(x1) == '|') {
+                            } else if (Column_Name.charAt(x1) == devided__tag) {
                                 if (value.equals(value1)) {
                                     duplicateCondition = "true";
                                     if (duplicateColumnName.equals("")) {
