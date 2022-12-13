@@ -17,7 +17,7 @@ FireNext is an offline database library.
 [![](https://jitpack.io/v/almoaz/FireNext.svg)](https://jitpack.io/#almoaz/FireNext)
 
 
-## Import (gradle project)
+## Installation (gradle project)
 
 ```bash
 Step 1. Add the JitPack repository to your build file
@@ -39,7 +39,7 @@ Step 2. Add the dependency
 
 ```
 
-## Import (maven project)
+## Installation (maven project)
 
 ```bash
 Step 1. Add the JitPack repository to your build file
@@ -61,7 +61,7 @@ Step 2. Add the dependency
 
 ```
 
-## Import (sbt project)
+## Installation (sbt project)
 
 ```bash
 Step 1. Add the JitPack repository to your build file
@@ -75,7 +75,7 @@ Step 2. Add the dependency
   libraryDependencies += "com.github.almoaz" % "FireNext" % "1.1.2"	
 
 ```
-## Import (sbt project)
+## Installation (sbt project)
 
 ```bash
 Step 1. Add the JitPack repository to your build file
