@@ -138,7 +138,7 @@ USER
 - [NextDatabase (Kotlin)](https://github.com/almoaz/FireNext/blob/master/NextDatabase(kt).md)
 
 
-## Restiction
+## Restriction
 
 Please do not use these characters in your documents.
 
