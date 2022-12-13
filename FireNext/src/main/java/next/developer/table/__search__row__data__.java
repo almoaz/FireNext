@@ -26,11 +26,16 @@ import static next.developer.table.__init__.*;
 
 import android.content.Context;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class __search__row__data__ {
-    public static String __search__row__data__(String Table_Name, String Search_Id, Context context) {
+    public static List<Object> __search__row__data__(String Table_Name, String Search_Id, Context context) {
         String table = __file__read__.__file__read__(Table_Name, context);
+        List<Object> returnValue = new ArrayList<>();
         if (table.equals("false")) {
-            return "'error' " + '[' + Table_Name + ']' + " table not found";
+            returnValue.add("'error' " + '[' + Table_Name + ']' + " table not found");
+            return returnValue;
         } else {
             String queryPermit = "false";
             String value = "";
@@ -51,57 +56,24 @@ public class __search__row__data__ {
 
                             } else if (value.charAt(x1) == cel__end__tag) {
                                 if (data.equals(Search_Id)) {
-                                    int Cell_Size = 0;
-                                    String value2 = "";
 
-                                    for (int x2 = 0; x2 <= value.length(); x2++) {
-                                        if (value.charAt(x2) != cel__end__tag && value.charAt(x2) != row__start__tag && value.charAt(x2) != row__end__tag) {
-                                            value2 = value2 + value.charAt(x2);
-                                        } else if (value.charAt(x2) == cel__end__tag) {
-                                            if (value2.length() > Cell_Size) {
-                                                Cell_Size = value2.length();
-                                                value2 = "";
-                                            }
-
-                                        } else if (value.charAt(x2) == row__end__tag) {
-                                            if (value2.length() > Cell_Size) {
-                                                Cell_Size = value2.length();
-                                                value2 = "";
-                                            }
-
-                                        }
-                                        if (x2 == value.length() - 1) {
-                                            break;
-                                        }
-
-
-                                    }
-                                    col_name = col_name + value;
+                                    col_name =  value;
                                     value = "";
-                                    value2 = "";
-
+                                    List<Object> value2 = new ArrayList<>();
                                     for (int x2 = 0; x2 <= col_name.length(); x2++) {
                                         if (col_name.charAt(x2) != cel__end__tag && col_name.charAt(x2) != col__start__tag && col_name.charAt(x2) != col__end__tag && col_name.charAt(x2) != row__start__tag && col_name.charAt(x2) != row__end__tag) {
                                             value = value + col_name.charAt(x2);
-                                        } else if (col_name.charAt(x2) == row__start__tag && !value2.equals("")) {
-                                            System.out.println(value2);
-                                            int value1 = value2.length() - value.length();
-                                            System.out.println(value + repeat(value1 + 3, "-"));
-                                            value2 = "";
                                         } else if (col_name.charAt(x2) == cel__end__tag) {
-                                            int value1 = Cell_Size - value.length();
-                                            value = value + repeat(value1 + 3, " ");
-                                            //value = value.ljust(Cell_Size + 3, " ");
-                                            value2 = value2 + value;
+                                            value2.add(value);
                                             value = "";
                                         } else if (col_name.charAt(x2) == col__end__tag || col_name.charAt(x2) == row__end__tag) {
-                                            int value1 = Cell_Size - value.length();
-                                            value = value + repeat(value1 + 3, " ");
-                                            value2 = value2 + value;
+
+                                            value2.add(value);
                                             value = "";
                                         }
                                         if (x2 == col_name.length() - 1) {
-                                            return value2;
+                                            returnValue = value2;
+                                            return returnValue;
                                         }
 
                                     }
@@ -113,51 +85,23 @@ public class __search__row__data__ {
 
                             } else if (value.charAt(x1) == row__end__tag) {
                                 if (data.equals(Search_Id)) {
-                                    int Cell_Size = 0;
-                                    String value2 = "";
-                                    for (int x2 = 0; x2 <= value.length(); x2++) {
-                                        if (value.charAt(x2) != cel__end__tag && value.charAt(x2) != row__start__tag && value.charAt(x2) != row__end__tag) {
-                                            value2 = value2 + value.charAt(x2);
-                                        } else if (value.charAt(x2) == cel__end__tag) {
-                                            if (value2.length() > Cell_Size) {
-                                                Cell_Size = value2.length();
-                                                value2 = "";
-                                            }
-                                        } else if (value.charAt(x2) == row__end__tag) {
-                                            if (value2.length() > Cell_Size) {
-                                                Cell_Size = value2.length();
-                                                value2 = "";
-                                            }
-                                        }
-                                        if (x2 == value.length() - 1) {
-                                            break;
-                                        }
-                                    }
-                                    col_name = col_name + value;
-                                    value = "";
-                                    value2 = "";
 
+                                    col_name =  value;
+                                    value = "";
+                                    List<Object> value2 = new ArrayList<>();
                                     for (int x2 = 0; x2 <= col_name.length(); x2++) {
                                         if (col_name.charAt(x2) != cel__end__tag && col_name.charAt(x2) != col__start__tag && col_name.charAt(x2) != col__end__tag && col_name.charAt(x2) != row__start__tag && col_name.charAt(x2) != row__end__tag) {
                                             value = value + col_name.charAt(x2);
-                                        } else if (col_name.charAt(x2) == row__start__tag && !value2.equals("")) {
-                                            System.out.println(value2);
-                                            int value1 = value2.length() - value.length();
-                                            System.out.println(value + repeat(value1 + 3, "-"));
-                                            value2 = "";
                                         } else if (col_name.charAt(x2) == cel__end__tag) {
-                                            int value1 = Cell_Size - value.length();
-                                            value = value + repeat(value1 + 3, " ");
-                                            value2 = value2 + value;
+                                            value2.add(value);
                                             value = "";
                                         } else if (col_name.charAt(x2) == col__end__tag || col_name.charAt(x2) == row__end__tag) {
-                                            int value1 = Cell_Size - value.length();
-                                            value = value + repeat(value1 + 3, " ");
-                                            value2 = value2 + value;
+                                            value2.add(value);
                                             value = "";
                                         }
                                         if (x2 == col_name.length() - 1) {
-                                            return value2;
+                                            returnValue = value2;
+                                            return returnValue;
                                         }
                                     }
                                     break;
@@ -168,13 +112,14 @@ public class __search__row__data__ {
                             }
                         }
                         if (x == table.length() - 1) {
-                            return "'error' [Search id : " + Search_Id + "] not found";
+                            returnValue.add("'error' [Search id : " + Search_Id + "] not found");
+                            return returnValue;
                         }
                         value = "";
                     }
                 }
             }
         }
-        return "true";
+        return returnValue;
     }
 }

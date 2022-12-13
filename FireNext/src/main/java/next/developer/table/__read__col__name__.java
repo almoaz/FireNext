@@ -33,7 +33,7 @@ public class __read__col__name__ {
     public static List<Object> __read__col__name__(String Table_Name, Context context) {
         List<Object> returnValue = new ArrayList<>();
         String table = __file__read__.__file__read__(Table_Name, context);
-        if (table == "false") {
+        if (table.equals("false")) {
             returnValue.add("'error' " + '[' + Table_Name + ']' + " table not found");
             return returnValue;
         } else {

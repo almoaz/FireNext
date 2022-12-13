@@ -262,7 +262,7 @@ public class NextTable {
         */
         return __search__col__data__.__search__col__data__(Table_Name, Column_Name, context);
     }
-    public static String search_row_data(Context context, String Table_Name, String Search_Id)
+    public static List<Object> search_row_data(Context context, String Table_Name, String Search_Id)
     {
         /**
 
