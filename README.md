@@ -75,7 +75,7 @@ Step 2. Add the dependency
   libraryDependencies += "com.github.almoaz" % "FireNext" % "1.1.2"	
 
 ```
-## Installation (sbt project)
+## Installation (leiningen project)
 
 ```bash
 Step 1. Add the JitPack repository to your build file
