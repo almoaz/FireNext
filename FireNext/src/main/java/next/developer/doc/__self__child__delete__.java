@@ -50,7 +50,7 @@ public class __self__child__delete__ {
                     file = new File(context.getFilesDir(), value + ".ndb");
                     if (file.exists()) {
                         String database = __file__read__.__file__read__(value, context);
-                        if (database.equals("[]") || database.equals("")) {
+                        if (database.equals(String.valueOf(start__tag+end__tag)) || database.equals("")) {
                             __self__update__.__self__update__(parent.substring(0, parent.length() - 1), value, context);
                             File file1 = new File(context.getFilesDir(), value + ".ndb");
                             file1.delete();
@@ -96,7 +96,7 @@ public class __self__child__delete__ {
 
                     if (file.exists()) {
                         String database = __file__read__.__file__read__(value, context);
-                        if (database.equals("[]") || database.equals("")) {
+                        if (database.equals(String.valueOf(start__tag+end__tag)) || database.equals("")) {
 
                             File file1 = new File(context.getFilesDir(), value + ".ndb");
                             file1.delete();
@@ -166,7 +166,7 @@ public class __self__child__delete__ {
                 File file = new File(context.getFilesDir(), value + ".ndb");
                 if (file.exists()) {
                     String database = __file__read__.__file__read__(value, context);
-                    if (database.equals("[]") || database.equals("")) {
+                    if (database.equals(String.valueOf(start__tag+end__tag)) || database.equals("")) {
                         File file1 = new File(context.getFilesDir(), value + ".ndb");
                         file1.delete();
                         return "true";
@@ -228,7 +228,7 @@ public class __self__child__delete__ {
                 File file = new File(context.getFilesDir(), value + ".ndb");
                 if (file.exists()) {
                     String database = __file__read__.__file__read__(value, context);
-                    if (database.equals("[]") || database.equals("")) {
+                    if (database.equals(String.valueOf(start__tag+end__tag)) || database.equals("")) {
                         File file1 = new File(context.getFilesDir(), value + ".ndb");
                         file1.delete();
                         return "true";

@@ -255,7 +255,7 @@ public class __self__delete__ {
                                 }
                                 if (x2 == childData.length() - 1) {
                                     if (childMatch.equals("true")) {
-                                        if (updateNDB.equals("[]")) {
+                                        if (updateNDB.equals(String.valueOf(start__tag+end__tag))) {
                                             __database__writer__.__database__writer__(databaseName, updateNDB, context);
                                             if (parentDatabaseName.equals("")) {
                                                 parentDatabaseName = databaseName;
@@ -273,7 +273,7 @@ public class __self__delete__ {
                                     if (childMatch.equals("null")) {
                                         updateNDB = updateNDB + end__tag;
 
-                                        if (updateNDB.equals("[]")) {
+                                        if (updateNDB.equals(String.valueOf(start__tag+end__tag))) {
                                             __database__writer__.__database__writer__(databaseName, updateNDB, context);
                                             if (parentDatabaseName.equals("")) {
                                                 parentDatabaseName = databaseName;
@@ -291,7 +291,7 @@ public class __self__delete__ {
                                     if (childMatch.equals("false")) {
                                         notFoundChild = notFoundChild + "'" + name + "'";
                                         updateNDB = childData.substring(0, childData.length() - 1) + value1 + end__tag;
-                                        if (updateNDB.equals("[]")) {
+                                        if (updateNDB.equals(String.valueOf(start__tag+end__tag))) {
                                             __database__writer__.__database__writer__(databaseName, updateNDB, context);
                                             if (parentDatabaseName.equals("")) {
                                                 parentDatabaseName = databaseName;
