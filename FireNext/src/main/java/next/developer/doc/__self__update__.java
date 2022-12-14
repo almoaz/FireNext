@@ -72,10 +72,13 @@ public class __self__update__ {
                                 __database__writer__.__database__writer__(parentValue, updateNDB, context);
                             }
 
-                            if (updateNDB.equals(String.valueOf(start__tag+end__tag))) {
+                            if (updateNDB.equals(start__tag+""+end__tag)) {
                                 File file = new File(context.getFilesDir(), parentValue + ".ndb");
                                 file.delete();
-                                __self__update__.__self__update__1(parent1.substring(0, parent1.length() - 1), parentValue, context);
+                                if (!parent1.equals(""))
+                                {
+                                    __self__update__.__self__update__1(parent1.substring(0, parent1.length() - 1), parentValue, context);
+                                }
                             }
 
                         } else {
@@ -139,10 +142,13 @@ public class __self__update__ {
                                 __database__writer__.__database__writer__(parentValue, updateNDB, context);
                             }
 
-                            if (updateNDB.equals(String.valueOf(start__tag+end__tag))) {
+                            if (updateNDB.equals(start__tag+""+end__tag)) {
                                 File file = new File(context.getFilesDir(), parentValue + ".ndb");
                                 file.delete();
-                                __self__update__.__self__update__(parent1.substring(0, parent1.length() - 1), parentValue, context);
+                                if (!parent1.equals(""))
+                                {
+                                    __self__update__.__self__update__(parent1.substring(0, parent1.length() - 1), parentValue, context);
+                                }
                             }
 
                         } else {
