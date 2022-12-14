@@ -83,7 +83,20 @@ public class NextDatabase {
                |     |---nationality:Bangladesh
            ----------------------------------------------
         */
-        return __self__add__.__self__add__(path, context);
+        String check = __self__check__.__self__check__(path, "add");
+        if (check.equals("child"))
+        {
+            return "value child not found";
+        }
+        if (check.equals("parent"))
+        {
+            return "parent not found";
+        }
+        if (check.equals("syntax"))
+        {
+            return "'error' "+path;
+        }
+        return __self__add__.__self__add__(check, context);
     }
     public static String read(Context context,String path)
     {
@@ -119,7 +132,17 @@ public class NextDatabase {
              |---nationality:Bangladesh
            ---------------------------------
         */
-        return __self__read__.__self__read__(path, context);
+
+        String check = __self__check__.__self__check__(path, "child");
+        if (check.equals("child"))
+        {
+            return "value child not found";
+        }
+        if (check.equals("syntax"))
+        {
+            return "'error' "+path;
+        }
+        return __self__read__.__self__read__(check, context);
     }
 
     public static String hasChild(Context context, String path)
@@ -144,7 +167,18 @@ public class NextDatabase {
                |     |---nationality:Bangladesh
            ----------------------------------------------
         */
-        return __self__child__.__self__child__(path, context);
+
+        String check = __self__check__.__self__check__(path, "child");
+        if (check.equals("child"))
+        {
+            return "value child not found";
+        }
+        if (check.equals("syntax"))
+        {
+            return "'error' "+path;
+        }
+
+        return __self__child__.__self__child__(check, context);
     }
 
     public static ArrayList query(Context context,String path)
@@ -177,7 +211,19 @@ public class NextDatabase {
                |     |---nationality:Bangladesh
            ----------------------------------------------
         */
-        return __self__query__.__self__query__(path, context);
+        ArrayList<String> returnValue = new ArrayList<>();
+        String check = __self__check__.__self__check__(path, "child");
+        if (check.equals("child"))
+        {
+            returnValue.add("value child not found");
+            return returnValue;
+        }
+        if (check.equals("syntax"))
+        {
+            returnValue.add("'error' "+path);
+            return returnValue;
+        }
+        return __self__query__.__self__query__(check, context);
     }
 
     public static String delete(Context context,String path)
@@ -215,9 +261,17 @@ public class NextDatabase {
                |     |---nationality:Bangladesh
            ----------------------------------------------
         */
+        String check = __self__check__.__self__check__(path, "child");
+        if (check.equals("child"))
+        {
+            return "value child not found";
+        }
+        if (check.equals("syntax"))
+        {
+            return "'error' "+path;
+        }
 
-
-        return __self__delete__.__self__delete__(path, context);
+        return __self__delete__.__self__delete__(check, context);
     }
 
 }
