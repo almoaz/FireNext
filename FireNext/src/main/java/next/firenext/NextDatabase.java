@@ -218,6 +218,11 @@ public class NextDatabase {
             returnValue.add("value child not found");
             return returnValue;
         }
+        if (check.equals("parent"))
+        {
+            returnValue.add("parent not found");
+            return returnValue;
+        }
         if (check.equals("syntax"))
         {
             returnValue.add("'error' "+path);
