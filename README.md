@@ -34,7 +34,7 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 
   dependencies {
-	  implementation 'com.github.almoaz:FireNext:1.1.2'
+	  implementation 'com.github.almoaz:FireNext:1.2.0'
   }
 
 ```
@@ -56,7 +56,7 @@ Step 2. Add the dependency
   <dependency>
        <groupId>com.github.almoaz</groupId>
        <artifactId>FireNext</artifactId>
-       <version>1.1.2</version>
+       <version>1.2.0</version>
   </dependency>
 
 ```
@@ -72,7 +72,7 @@ Add it in your build.sbt at the end of resolvers:
 
 Step 2. Add the dependency
 
-  libraryDependencies += "com.github.almoaz" % "FireNext" % "1.1.2"	
+  libraryDependencies += "com.github.almoaz" % "FireNext" % "1.2.0"	
 
 ```
 ## Installation (leiningen project)
@@ -86,7 +86,7 @@ Add it in your project.clj at the end of repositories:
 
 Step 2. Add the dependency
 
-  :dependencies [[com.github.almoaz/FireNext "1.1.2"]]	
+  :dependencies [[com.github.almoaz/FireNext "1.2.0"]]	
 
 ```
     
