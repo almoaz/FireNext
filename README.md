@@ -149,8 +149,9 @@ Please do not use these characters in your documents.
 - " Ê " this character means database end tag
 - " | " this character means add new data
 - " : " this character means valueChild
+- " > " this character means valueChild
 
-"|" and ":" These character has its uses. You will find it in the documentation.
+"|", ":" and ">" These character has its uses. You will find it in the documentation.
 
 
 ## Having problems?
